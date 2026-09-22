@@ -251,8 +251,12 @@
   .prop-footer .valid b{ color:#c9d0d5; }
   .prop-total{ text-align:right; }
   .prop-total .lbl{ display:block; font-size:10.5px; color:var(--accent); font-weight:800; text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px; }
-  .prop-total .nums{ font-family:'Sora'; font-size:30px; font-weight:800; }
-  .prop-total .nums .amp{ color:var(--accent); font-size:20px; margin:0 8px; }
+  .prop-total .nums{ display:flex; align-items:baseline; gap:8px; justify-content:flex-end; }
+  .prop-total .nums .amp{ color:var(--accent); font-size:20px; }
+  .prop-total .tot-col{ display:flex; flex-direction:column; align-items:flex-end; }
+  .prop-total .tot-col b{ font-family:'Sora'; font-size:26px; font-weight:800; }
+  .prop-total .tot-col small{ font-size:9px; color:#7c858c; font-weight:800; text-transform:uppercase; letter-spacing:.06em; margin-top:2px; }
+  .prop-contact{ margin-top:22px; padding-top:16px; border-top:1px solid #1c2128; text-align:center; font-size:10.5px; line-height:1.7; color:#7c858c; font-weight:600; }
   @media print{
     body.printing-proposta *{ visibility:hidden; }
     body.printing-proposta #proposta-print-target, body.printing-proposta #proposta-print-target *{ visibility:visible; }
@@ -603,6 +607,7 @@ const CONTRATO_STATUS = {
   assinado:{ label:'Assinado', c:'green' }
 };
 const MODELOS_CONTRATO = {
+  lancamento: { label:'Lançamento Digital', servicos:'Planejamento estratégico, pré-lançamento envolvente, lançamento dinâmico e pós-lançamento dedicado para garantir o sucesso do seu infoproduto no mercado digital.', prazo:'conforme cronograma de lançamento acordado' },
   social: { label:'Social Media', servicos:'Produção e publicação de conteúdo para redes sociais (Instagram/TikTok), incluindo posts, reels e stories conforme cronograma mensal aprovado.', prazo:'renovação automática, mês a mês' },
   trafego: { label:'Tráfego Pago', servicos:'Gestão de campanhas de tráfego pago (Meta Ads e/ou Google Ads), incluindo criação, otimização e relatório mensal de performance.', prazo:'renovação automática, mês a mês' },
   pacote: { label:'Social Media + Tráfego Pago', servicos:'Produção de conteúdo para redes sociais e gestão de campanhas de tráfego pago, incluindo relatório mensal de performance.', prazo:'renovação automática, mês a mês' },
@@ -703,6 +708,7 @@ const MODULES = [
   { id:'acesso', label:'Acesso' }
 ];
 const EQUIPE_POR_MODELO = {
+  lancamento: ['1× Gerente de Projetos', '1× Gestor de Tráfego', '1× Designer Digital', '1× Social Media', '1× Copywriter'],
   social: ['1× Social Media', '1× Designer Digital', '1× Copywriter'],
   trafego: ['1× Gestor de Tráfego', '1× Analista de Performance', '1× Designer Digital'],
   pacote: ['1× Social Media', '1× Gestor de Tráfego', '1× Designer Digital', '1× Copywriter'],
@@ -710,10 +716,12 @@ const EQUIPE_POR_MODELO = {
   consultoria: ['1× Estrategista de Marketing', '1× Analista de Dados']
 };
 const PROPOSTA_FASES = [
-  { titulo:'Diagnóstico', desc:'Mapeamos o momento atual do seu negócio, o público-alvo e os concorrentes diretos para entender onde estão as maiores oportunidades.' },
-  { titulo:'Execução', desc:'Colocamos a estratégia em prática com produção de conteúdo, gestão de campanhas e acompanhamento próximo do que está sendo entregue.' },
-  { titulo:'Otimização', desc:'Analisamos os resultados mês a mês e ajustamos a rota — o que funciona, escalamos; o que não funciona, corrigimos rápido.' }
+  { titulo:'Planejamento', desc:'Iniciaremos com uma análise profunda de mercado e público-alvo, seguido pelo desenvolvimento de uma estratégia abrangente. Definiremos metas e identificaremos as melhores oportunidades.' },
+  { titulo:'Criação', desc:'Nossa equipe trará à vida a identidade visual da marca. Isso inclui o manual, uma paleta de cores distinta e elementos que refletem a expertise e a credibilidade no segmento.' },
+  { titulo:'Operação', desc:'Executaremos o lançamento de forma eficaz. Do pré-lançamento até o lançamento oficial com estratégias de marketing, estaremos focados em maximizar a visibilidade e o impacto da marca.' }
 ];
+const PROPOSTA_IDENTIDADE_VISUAL = 'Elevamos a sua marca com uma comunicação visual exclusiva, do design do logotipo às cores e tipografia, proporcionando uma experiência de marca única que destaca sua presença digital e atrai clientes.';
+const PROPOSTA_RECORRENTE = 'Configuração, criação, programação e postagem dos conteúdos nas mídias sociais da empresa seguindo as métricas individuais e estratégias do plano de ação.';
 const STATUS_PROPOSTA = {
   rascunho:{ label:'Rascunho', c:'amber' },
   enviada:{ label:'Enviada', c:'violet' },
@@ -2395,7 +2403,7 @@ function renderPropostas(root){
 }
 function openPropostaModal(id){
   const p = id ? STATE.proposals.find(function(x){return x.id===id;}) : null;
-  propostaDraft = { id: p?p.id:null, modelo: p?p.modelo:'social', clientId: p?(p.clientId||''):'', seed: p||{} };
+  propostaDraft = { id: p?p.id:null, modelo: p?p.modelo:'lancamento', clientId: p?(p.clientId||''):'', seed: p||{} };
   openModal(propostaModalShell(p));
   refreshPropostaLive();
   const first = $('#modal-root input[name="nomeCliente"]'); if(first) first.focus();
@@ -2439,7 +2447,7 @@ function propostaFormFieldsHtml(d){
   '<div><label>Status</label><select name="status">'+Object.keys(STATUS_PROPOSTA).map(function(s){ return '<option value="'+s+'"'+((d.status||'rascunho')===s?' selected':'')+'>'+STATUS_PROPOSTA[s].label+'</option>'; }).join('')+'</select></div>';
 }
 function readPropostaForm(){
-  const form = $('form[data-form="proposta"]'); if(!form) return { modelo:'social' };
+  const form = $('form[data-form="proposta"]'); if(!form) return { modelo:'lancamento' };
   const fd = new FormData(form);
   return {
     clientId: propostaDraft.clientId||'', nomeCliente: fd.get('nomeCliente')||'', segmento: fd.get('segmento')||'',
@@ -2449,32 +2457,38 @@ function readPropostaForm(){
   };
 }
 function buildPropostaPreviewHtml(d){
-  const modelo = MODELOS_CONTRATO[d.modelo] || MODELOS_CONTRATO.social;
-  const equipe = EQUIPE_POR_MODELO[d.modelo] || EQUIPE_POR_MODELO.social;
+  const modelo = MODELOS_CONTRATO[d.modelo] || MODELOS_CONTRATO.lancamento;
+  const equipe = EQUIPE_POR_MODELO[d.modelo] || EQUIPE_POR_MODELO.lancamento;
   const nome = d.nomeCliente ? esc(d.nomeCliente) : '[Nome do cliente]';
-  const invest = d.observacao ? esc(d.observacao) : ('Oferecemos um projeto sob medida para impulsionar a '+nome+' no cenário digital, potencializando os resultados através de estratégias eficazes de marketing, comunicação e gestão contínua.');
+  const invest = d.observacao ? esc(d.observacao) : 'Oferecemos um projeto sob medida para impulsionar a sua marca no cenário digital, potencializando os seus resultados através de estratégias eficazes de marketing digital, comunicação e branding.';
   return '<div class="prop-doc" id="proposta-print-target">'+
     '<div class="prop-brand"><div class="mark"></div><b>POTENCIAL <span>MÍDIA</span></b></div>'+
     '<div class="prop-hero">'+
       '<div><h1>PROPOSTA<span class="dot">.</span></h1>'+
-      '<p>Em parceria com <b>'+nome+'</b>, nosso objetivo é fortalecer a presença digital da marca e gerar resultados consistentes através de '+modelo.label.toLowerCase()+'.</p>'+
-      '<p>'+esc(modelo.servicos)+'</p></div>'+
+      '<p>Em parceria com <b>'+nome+'</b>, nosso projeto é criar uma presença digital marcante para potencializar a pessoalidade do Expert no mundo digital.</p>'+
+      '<p>Desde a construção da identidade visual até o lançamento estratégico de seus produtos, estamos comprometidos em impulsionar sua marca para o sucesso online.</p></div>'+
       '<div class="prop-phases">'+PROPOSTA_FASES.map(function(f){ return '<div class="prop-phase"><b>'+f.titulo+'</b><p>'+f.desc+'</p></div>'; }).join('')+'</div>'+
     '</div>'+
     '<div class="prop-for"><span class="lbl">Proposta para</span><b>'+nome+'</b></div>'+
     '<div class="prop-section-label">O que está incluído <span>· Escopo completo do projeto</span></div>'+
     '<div class="prop-grid">'+
       '<div><h4>Equipe</h4><div class="big">'+equipe.length+'× profissionais dedicados</div><ul class="prop-team-list">'+equipe.map(function(e){ return '<li>'+e+'</li>'; }).join('')+'</ul></div>'+
-      '<div><h4>Acompanhamento</h4><div class="big">Suporte direto com a equipe</div><p>Da produção ao relatório de performance, cuidamos de cada etapa com comunicação direta e transparente com você.</p></div>'+
+      '<div><h4>Identidade Visual</h4><div class="big">Branding Completo</div><p>'+PROPOSTA_IDENTIDADE_VISUAL+'</p></div>'+
     '</div>'+
-    '<div class="prop-service-row"><span class="stag">Serviço principal</span><div style="flex:1"><b>'+esc(modelo.label)+'</b><p>'+esc(modelo.servicos)+'</p></div>'+(d.performancePct?'<span class="perf-pill">'+d.performancePct+'% do resultado</span>':'')+'</div>'+
-    (d.mensal>0 ? '<div class="prop-service-row"><span class="stag">Serviço recorrente</span><div style="flex:1"><b>Acompanhamento mensal</b><p>Gestão contínua, relatórios de performance e otimizações mês a mês.</p></div></div>' : '')+
+    '<div class="prop-service-row"><span class="stag">Serviço</span><div style="flex:1"><b>'+esc(modelo.label)+'</b><p>'+esc(modelo.servicos)+'</p></div>'+(d.performancePct?'<span class="perf-pill">'+d.performancePct+'% do líquido</span>':'')+'</div>'+
+    (d.mensal>0 ? '<div class="prop-service-row"><span class="stag">Serviço recorrente</span><div style="flex:1"><b>Gestão de Mídias Sociais</b><p>'+PROPOSTA_RECORRENTE+'</p></div></div>' : '')+
     '<div class="prop-section-label">Investimento</div>'+
     '<div class="prop-invest">'+invest+'</div>'+
+    '<div class="prop-section-label">Resumo financeiro</div>'+
     '<div class="prop-footer">'+
       '<div class="valid">Proposta válida até <b>'+(d.validade?esc(d.validade):'[data]')+'</b></div>'+
-      '<div class="prop-total"><span class="lbl">Total do investimento</span><div class="nums">'+fmtMoney(d.setup||0)+'<span class="amp">&amp;</span>'+fmtMoney(d.mensal||0)+'</div></div>'+
+      '<div class="prop-total"><span class="lbl">Total do investimento</span><div class="nums">'+
+        '<div class="tot-col"><b>'+fmtMoney(d.setup||0)+'</b><small>Setup</small></div>'+
+        '<span class="amp">&amp;</span>'+
+        '<div class="tot-col"><b>'+fmtMoney(d.mensal||0)+'</b><small>Por mês</small></div>'+
+      '</div></div>'+
     '</div>'+
+    '<div class="prop-contact">Potencial Mídia · São Paulo · SP<br>felipesoares@potencialmidia.com · +55 (11) 91471-9567</div>'+
   '</div>';
 }
 function refreshPropostaLive(){
