@@ -206,6 +206,60 @@
   .notas-chip{ background:var(--amber-soft); color:var(--amber); font-size:11px; font-weight:700; padding:4px 9px; border-radius:7px; border:none; }
   .notas-chip:hover{ background:rgba(243,179,74,.28); }
 
+  /* ---------- propostas ---------- */
+  .proposta-card{ display:flex; align-items:center; gap:14px; padding:16px 18px; border-bottom:1px solid var(--border-soft); }
+  .proposta-card:last-child{ border-bottom:none; }
+  .proposta-modal-body{ display:flex; align-items:stretch; min-height:0; }
+  .proposta-form-col{ flex:1 1 34%; min-width:0; padding:20px; display:flex; flex-direction:column; gap:14px; max-height:78vh; overflow-y:auto; }
+  .proposta-preview-col{ flex:1 1 66%; min-width:0; background:#050708; border-left:1px solid var(--border-soft); max-height:78vh; overflow-y:auto; padding:0; }
+  .modal.proposta-no-preview .proposta-preview-col{ display:none; }
+  .modal.proposta-no-preview{ max-width:640px; }
+
+  .prop-doc{ background:#0c0f13; color:#e7ebee; font-family:'Manrope',sans-serif; padding:44px 40px 36px; }
+  .prop-doc .prop-brand{ display:flex; align-items:center; gap:9px; margin-bottom:26px; }
+  .prop-doc .prop-brand .mark{ width:28px; height:28px; border-radius:7px; background:linear-gradient(155deg,var(--accent),#c94e1e); flex:none; }
+  .prop-doc .prop-brand b{ font-family:'Sora'; font-weight:800; font-size:13px; letter-spacing:.02em; }
+  .prop-doc .prop-brand span{ color:var(--accent); font-weight:800; }
+  .prop-hero{ display:grid; grid-template-columns:1.3fr 1fr; gap:36px; padding-bottom:28px; border-bottom:1px solid #1c2128; }
+  .prop-hero h1{ font-family:'Sora'; font-size:44px; font-weight:800; letter-spacing:-.01em; margin:0 0 14px; text-transform:uppercase; }
+  .prop-hero h1 .dot{ color:var(--accent); }
+  .prop-hero p{ font-size:13px; line-height:1.7; color:#aab3bb; margin:0 0 12px; }
+  .prop-hero p b{ color:#fff; }
+  .prop-phases{ display:flex; flex-direction:column; gap:16px; }
+  .prop-phase b{ display:block; font-family:'Sora'; font-size:14px; font-weight:700; margin-bottom:5px; }
+  .prop-phase p{ font-size:11.5px; line-height:1.6; color:#9aa3ab; margin:0; }
+  .prop-for{ display:flex; align-items:baseline; gap:12px; padding:22px 0; border-bottom:1px solid #1c2128; }
+  .prop-for span.lbl{ font-size:10.5px; color:var(--accent); font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+  .prop-for b{ font-family:'Sora'; font-size:26px; font-weight:800; }
+  .prop-section-label{ font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); padding:18px 0 14px; }
+  .prop-section-label span{ color:#6b747c; font-weight:700; margin-left:8px; }
+  .prop-grid{ display:grid; grid-template-columns:1fr 1fr; gap:30px; padding-bottom:22px; border-bottom:1px solid #1c2128; }
+  .prop-grid h4{ font-family:'Sora'; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#7c858c; margin-bottom:10px; }
+  .prop-grid .big{ font-family:'Sora'; font-size:15px; font-weight:800; margin-bottom:8px; }
+  .prop-team-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px; }
+  .prop-team-list li{ font-size:12.5px; color:#c9d0d5; padding-left:14px; position:relative; }
+  .prop-team-list li::before{ content:''; width:5px; height:5px; border-radius:99px; background:var(--accent); position:absolute; left:0; top:7px; }
+  .prop-grid p{ font-size:12px; line-height:1.65; color:#9aa3ab; margin:0; }
+  .prop-service-row{ display:flex; align-items:flex-start; gap:18px; padding:18px 0; border-bottom:1px solid #1c2128; }
+  .prop-service-row .stag{ font-size:9.5px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--accent); flex:0 0 130px; padding-top:2px; }
+  .prop-service-row b{ display:block; font-family:'Sora'; font-size:14px; font-weight:800; margin-bottom:5px; text-transform:uppercase; }
+  .prop-service-row p{ font-size:12px; line-height:1.6; color:#9aa3ab; margin:0; flex:1; }
+  .prop-service-row .perf-pill{ flex:none; background:var(--accent); color:#1c0c04; font-weight:800; font-size:10.5px; padding:5px 11px; border-radius:99px; white-space:nowrap; }
+  .prop-invest{ padding:18px 0; font-size:12px; line-height:1.7; color:#9aa3ab; border-bottom:1px solid #1c2128; }
+  .prop-footer{ display:flex; align-items:flex-end; justify-content:space-between; padding-top:22px; gap:20px; flex-wrap:wrap; }
+  .prop-footer .valid{ font-size:10.5px; color:#7c858c; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
+  .prop-footer .valid b{ color:#c9d0d5; }
+  .prop-total{ text-align:right; }
+  .prop-total .lbl{ display:block; font-size:10.5px; color:var(--accent); font-weight:800; text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px; }
+  .prop-total .nums{ font-family:'Sora'; font-size:30px; font-weight:800; }
+  .prop-total .nums .amp{ color:var(--accent); font-size:20px; margin:0 8px; }
+  @media print{
+    body.printing-proposta *{ visibility:hidden; }
+    body.printing-proposta #proposta-print-target, body.printing-proposta #proposta-print-target *{ visibility:visible; }
+    body.printing-proposta #proposta-print-target{ position:absolute; inset:0; width:100%; max-height:none; overflow:visible; margin:0; padding:0; border:none; }
+    body.printing-proposta .modal-overlay, body.printing-proposta .modal{ position:static !important; background:none !important; box-shadow:none !important; max-width:none !important; max-height:none !important; padding:0 !important; }
+  }
+
   /* ---------- login ---------- */
   .login-screen{ min-height:100vh; display:flex; align-items:center; justify-content:center; background:radial-gradient(circle at 30% 20%, #171012 0%, var(--bg) 55%); padding:20px; }
   .login-card{ width:100%; max-width:380px; background:var(--surface); border:1px solid var(--border-soft); border-radius:18px; padding:32px 30px; box-shadow:var(--shadow); }
@@ -394,8 +448,8 @@ const STATE = /*@STATE_START*/{
   "currentUserId": "u-clarissa",
   "readOnly": false,
   "users": [
-    { "id":"u-clarissa","name":"Clarissa Dias","email":"clarissadias@potencialmidia.com","role":"admin","color":"#ff7a45","status":"ativo","modules":["dashboard","demandas","financeiro","contratos","clientes","acesso","maquina"],"clientesVisiveis":"all" },
-    { "id":"u-felipe","name":"Felipe Soares","email":"felipe@potencialmidia.com","role":"admin","color":"#5aa9f2","status":"ativo","modules":["dashboard","demandas","financeiro","contratos","clientes","acesso","maquina"],"clientesVisiveis":"all" },
+    { "id":"u-clarissa","name":"Clarissa Dias","email":"clarissadias@potencialmidia.com","role":"admin","color":"#ff7a45","status":"ativo","modules":["dashboard","demandas","financeiro","contratos","propostas","clientes","acesso","maquina"],"clientesVisiveis":"all" },
+    { "id":"u-felipe","name":"Felipe Soares","email":"felipe@potencialmidia.com","role":"admin","color":"#5aa9f2","status":"ativo","modules":["dashboard","demandas","financeiro","contratos","propostas","clientes","acesso","maquina"],"clientesVisiveis":"all" },
     { "id":"u-marina","name":"Marina Alves","email":"marina@potencialmidia.com","role":"membro","color":"#8d90fb","status":"ativo","modules":["dashboard","demandas","clientes"],"clientesVisiveis":["c1","c2","c4","c7"] },
     { "id":"u-thiago","name":"Thiago Nunes","email":"thiago@potencialmidia.com","role":"membro","color":"#2ad9c2","status":"ativo","modules":["dashboard","demandas"],"clientesVisiveis":["c3","c5","c6","c9"] },
     { "id":"u-lais","name":"Laís Ferreira","email":"lais@potencialmidia.com","role":"membro","color":"#f3b34a","status":"revogado","modules":["dashboard","demandas"],"clientesVisiveis":["c8"] }
@@ -516,6 +570,9 @@ const STATE = /*@STATE_START*/{
     { "id":"l10","nome":"Clínica Renovare","whatsapp":"+5511987650010","email":"","instagram":"renovare.clinica","nicho":"Clínica Estética","tipoServico":"Pacote Completo","origem":"Instagram","valorEstimado":3100,"notas":"Compareceu na call, aguardando proposta.","etapa":"compareceu","criadoEm":"2026-08-06" },
     { "id":"l11","nome":"Pilates Equilíbrio","whatsapp":"+5511987650011","email":"","instagram":"pilates.equilibrio","nicho":"Studio de Pilates","tipoServico":"Social Media","origem":"WhatsApp","valorEstimado":1500,"notas":"Fechou! Contrato em elaboração.","etapa":"fechado","criadoEm":"2026-08-02" },
     { "id":"l12","nome":"SuplementaX Loja","whatsapp":"+5511987650012","email":"","instagram":"suplementax","nicho":"Loja / E-commerce","tipoServico":"Tráfego Pago","origem":"Google","valorEstimado":1700,"notas":"Sem orçamento no momento.","etapa":"perdido","criadoEm":"2026-07-28" }
+  ],
+  "proposals": [
+    { "id":"p1","clientId":null,"nomeCliente":"Fit Force Academia","segmento":"Academia","modelo":"pacote","setup":1200,"mensal":2600,"performancePct":null,"validade":"Outubro de 2026","observacao":"","status":"enviada","criadoEm":"2026-08-20" }
   ]
 }/*@STATE_END*/;
 
@@ -640,10 +697,28 @@ const MODULES = [
   { id:'demandas', label:'Demandas' },
   { id:'financeiro', label:'Financeiro' },
   { id:'contratos', label:'Contratos' },
+  { id:'propostas', label:'Propostas' },
   { id:'clientes', label:'Clientes' },
   { id:'maquina', label:'Máquina de Clientes' },
   { id:'acesso', label:'Acesso' }
 ];
+const EQUIPE_POR_MODELO = {
+  social: ['1× Social Media', '1× Designer Digital', '1× Copywriter'],
+  trafego: ['1× Gestor de Tráfego', '1× Analista de Performance', '1× Designer Digital'],
+  pacote: ['1× Social Media', '1× Gestor de Tráfego', '1× Designer Digital', '1× Copywriter'],
+  site: ['1× Designer Digital', '1× Desenvolvedor', '1× Redator'],
+  consultoria: ['1× Estrategista de Marketing', '1× Analista de Dados']
+};
+const PROPOSTA_FASES = [
+  { titulo:'Diagnóstico', desc:'Mapeamos o momento atual do seu negócio, o público-alvo e os concorrentes diretos para entender onde estão as maiores oportunidades.' },
+  { titulo:'Execução', desc:'Colocamos a estratégia em prática com produção de conteúdo, gestão de campanhas e acompanhamento próximo do que está sendo entregue.' },
+  { titulo:'Otimização', desc:'Analisamos os resultados mês a mês e ajustamos a rota — o que funciona, escalamos; o que não funciona, corrigimos rápido.' }
+];
+const STATUS_PROPOSTA = {
+  rascunho:{ label:'Rascunho', c:'amber' },
+  enviada:{ label:'Enviada', c:'violet' },
+  aceita:{ label:'Aceita', c:'green' }
+};
 const ETAPAS_LEAD = {
   novo:{ label:'Novo Lead', c:'neutral' },
   em_contato:{ label:'Em Contato', c:'accent' },
@@ -673,6 +748,7 @@ let ui = {
   crmFilters: { etapa:'todas', origem:'todas', servico:'todas', nicho:'todas' }
 };
 let contractDraft = null;
+let propostaDraft = null;
 
 /* ---------------- helpers ---------------- */
 function $(sel,root){ return (root||document).querySelector(sel); }
@@ -720,7 +796,8 @@ const ICONS = {
   lock:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>',
   logout:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>',
   target:'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>',
-  whatsapp:'<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.35A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.08-1.11l-.29-.17-3 .8.8-2.93-.19-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.02-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.8-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28Z"/></svg>'
+  whatsapp:'<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.35A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.08-1.11l-.29-.17-3 .8.8-2.93-.19-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.02-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.8-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28Z"/></svg>',
+  propostas:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 13l3-3 2.5 2.5L17 8"/></svg>'
 };
 
 /* ---------------- persistence ---------------- */
@@ -817,6 +894,7 @@ const TOPBAR_INFO = {
   demandas:{ title:'Gestão de demandas', sub:'Entregas para os clientes' },
   financeiro:{ title:'Financeiro', sub:'Entradas e saídas do estúdio' },
   contratos:{ title:'Contratos', sub:'Rascunhos, envios e assinaturas' },
+  propostas:{ title:'Propostas', sub:'Gerador comercial por cliente' },
   clientes:{ title:'Clientes', sub:'Carteira ativa do estúdio' },
   maquina:{ title:'Máquina de Clientes', sub:'Marketing, comercial e CRM de leads' },
   acesso:{ title:'Acesso', sub:'Quem vê o quê no Potencial OS' }
@@ -837,6 +915,8 @@ function renderTopbarActions(){
     box.innerHTML = '<button class="btn btn-primary" data-action="open-finance-modal" '+disabled+'>'+svgIcon('plus')+' Novo lançamento</button>';
   } else if(ui.module==='contratos'){
     box.innerHTML = '<button class="btn btn-primary" data-action="open-contract-modal" '+disabled+'>'+svgIcon('plus')+' Novo contrato</button>';
+  } else if(ui.module==='propostas'){
+    box.innerHTML = '<button class="btn btn-primary" data-action="open-proposta-modal" '+disabled+'>'+svgIcon('plus')+' Nova proposta</button>';
   } else if(ui.module==='clientes'){
     box.innerHTML = '<button class="btn btn-primary" data-action="open-client-modal" '+disabled+'>'+svgIcon('plus')+' Cliente</button>';
   } else if(ui.module==='maquina'){
@@ -855,6 +935,7 @@ function render(){
   else if(ui.module==='demandas') renderDemandas(c);
   else if(ui.module==='financeiro') renderFinanceiro(c);
   else if(ui.module==='contratos') renderContratos(c);
+  else if(ui.module==='propostas') renderPropostas(c);
   else if(ui.module==='clientes') renderClientes(c);
   else if(ui.module==='maquina') renderMaquina(c);
   else if(ui.module==='acesso') renderAcesso(c);
@@ -1844,6 +1925,17 @@ function onDocClick(e){
   else if(action==='delete-lead'){ mutate(function(){ STATE.leads = STATE.leads.filter(function(l){return l.id!==id;}); }); closeModal(); toast('Lead removido.'); }
   else if(action==='open-daily-marketing-modal'){ openDailyMarketingModal(); }
   else if(action==='edit-growth-meta'){ openGrowthMetaModal(); }
+  else if(action==='open-proposta-modal' || action==='edit-proposta'){ openPropostaModal(id||null); }
+  else if(action==='delete-proposta'){ mutate(function(){ STATE.proposals = STATE.proposals.filter(function(p){return p.id!==id;}); }); closeModal(); toast('Proposta removida.'); }
+  else if(action==='proposta-toggle-preview'){
+    const modal = document.getElementById('proposta-modal');
+    if(modal){
+      modal.classList.toggle('proposta-no-preview');
+      const hidden = modal.classList.contains('proposta-no-preview');
+      btn.innerHTML = svgIcon(hidden?'doc':'x')+' '+(hidden?'Mostrar prévia':'Ocultar prévia');
+    }
+  }
+  else if(action==='proposta-export-pdf'){ printProposta(); }
 }
 
 function onDocChange(e){
@@ -1885,6 +1977,18 @@ function onDocChange(e){
   } else if(t.matches('[data-action-change="crm-filter-select"]')){
     ui.crmFilters[t.dataset.filterKey] = t.value;
     render();
+  } else if(t.matches('[data-action-change="proposta-cliente"]')){
+    propostaDraft.clientId = t.value;
+    const cl = clientById(t.value);
+    const form = t.form;
+    if(cl && form){
+      if(form.elements['nomeCliente']) form.elements['nomeCliente'].value = cl.nome;
+      if(form.elements['segmento']) form.elements['segmento'].value = cl.segmento||'';
+    }
+    refreshPropostaLive();
+  } else if(t.matches('[data-action-change="proposta-modelo"]')){
+    propostaDraft.modelo = t.value;
+    refreshPropostaLive();
   }
 }
 
@@ -1988,6 +2092,14 @@ function onDocSubmit(e){
       };
     });
     closeModal(); toast('Metas atualizadas.');
+  } else if(type==='proposta'){
+    const id = form.dataset.id;
+    const data = readPropostaForm();
+    mutate(function(){
+      if(id){ Object.assign(STATE.proposals.find(function(p){return p.id===id;}), data); }
+      else { STATE.proposals.push(Object.assign({id:uid('p'), criadoEm: TODAY}, data)); }
+    });
+    closeModal(); toast(id?'Proposta atualizada.':'Proposta criada.');
   }
 }
 
@@ -2013,6 +2125,8 @@ function onDocInput(e){
     render();
     const inp = document.getElementById('crm-search-input');
     if(inp){ inp.focus(); inp.setSelectionRange(pos,pos); }
+  } else if(e.target.form && e.target.form.dataset && e.target.form.dataset.form==='proposta'){
+    refreshPropostaLive();
   }
 }
 
@@ -2260,12 +2374,131 @@ function openGrowthMetaModal(){
   openModal(html);
 }
 
+/* ---------------- propostas ---------------- */
+function renderPropostas(root){
+  const list = STATE.proposals.slice().sort(function(a,b){ return b.criadoEm<a.criadoEm?-1:1; });
+  root.innerHTML = '<div class="card">'+
+    (list.length ? list.map(function(p){
+      const modelo = MODELOS_CONTRATO[p.modelo]||MODELOS_CONTRATO.social;
+      return '<div class="proposta-card">'+
+        '<span class="icon-badge">'+svgIcon('propostas')+'</span>'+
+        '<div style="flex:1;min-width:0"><b style="font-size:13.5px;text-transform:uppercase;letter-spacing:.01em">'+esc(p.nomeCliente)+'</b>'+
+        '<div style="font-size:11.5px;color:var(--text-faint);font-weight:600;margin-top:2px">'+esc(modelo.label)+' · '+fmtMoney(p.setup||0)+' + '+fmtMoney(p.mensal||0)+'/mês</div></div>'+
+        pill(STATUS_PROPOSTA,p.status)+
+        '<div style="display:flex;gap:4px">'+
+          '<button class="btn btn-ghost btn-icon btn-sm" data-action="open-proposta-modal" data-id="'+p.id+'">'+svgIcon('edit')+'</button>'+
+          '<button class="btn btn-ghost btn-icon btn-sm" data-action="delete-proposta" data-id="'+p.id+'">'+svgIcon('trash')+'</button>'+
+        '</div>'+
+      '</div>';
+    }).join('') : '<div class="empty-state">'+svgIcon('propostas')+'<p>Nenhuma proposta criada ainda.</p></div>')+
+  '</div>';
+}
+function openPropostaModal(id){
+  const p = id ? STATE.proposals.find(function(x){return x.id===id;}) : null;
+  propostaDraft = { id: p?p.id:null, modelo: p?p.modelo:'social', clientId: p?(p.clientId||''):'', seed: p||{} };
+  openModal(propostaModalShell(p));
+  refreshPropostaLive();
+  const first = $('#modal-root input[name="nomeCliente"]'); if(first) first.focus();
+}
+function propostaModalShell(p){
+  const isEdit = !!p;
+  return '<div class="modal-overlay"><div class="modal xwide" id="proposta-modal">'+
+    '<div class="modal-head"><h3>'+(isEdit?'Editar proposta':'Nova proposta')+'</h3>'+
+      '<div style="display:flex;align-items:center;gap:8px">'+
+        '<button type="button" class="btn btn-ghost btn-sm" data-action="proposta-toggle-preview">'+svgIcon('x')+' Ocultar prévia</button>'+
+        '<button class="close-x" data-action="close-modal">'+svgIcon('x')+'</button>'+
+      '</div>'+
+    '</div>'+
+    '<form data-form="proposta" data-id="'+(p?p.id:'')+'">'+
+      '<div class="proposta-modal-body">'+
+        '<div class="proposta-form-col" id="proposta-form-fields"></div>'+
+        '<div class="proposta-preview-col" id="proposta-preview-body"></div>'+
+      '</div>'+
+      '<div class="modal-foot">'+
+        (isEdit?'<button type="button" class="btn btn-danger" data-action="delete-proposta" data-id="'+p.id+'" style="margin-right:auto">'+svgIcon('trash')+' Excluir</button>':'')+
+        '<button type="button" class="btn btn-ghost" data-action="proposta-export-pdf">'+svgIcon('download')+' Exportar PDF</button>'+
+        '<button type="submit" class="btn btn-primary">'+svgIcon('check')+' Salvar proposta</button>'+
+      '</div>'+
+    '</form>'+
+  '</div></div>';
+}
+function propostaFormFieldsHtml(d){
+  const clients = STATE.clients;
+  return ''+
+  '<div class="section-label">Dados do cliente</div>'+
+  '<div><label>Cliente existente (autofill)</label><select name="clientIdSel" data-action-change="proposta-cliente"><option value="">Em branco / sem cliente</option>'+clients.map(function(c){ return '<option value="'+c.id+'"'+(propostaDraft.clientId===c.id?' selected':'')+'>'+esc(c.nome)+'</option>'; }).join('')+'</select></div>'+
+  '<div><label>Nome do cliente</label><input name="nomeCliente" required value="'+(d.nomeCliente?esc(d.nomeCliente):'')+'" placeholder="Ex: Studio Corpo Ativo"></div>'+
+  '<div><label>Segmento / nicho</label><input name="segmento" value="'+(d.segmento?esc(d.segmento):'')+'" placeholder="Ex: Academia"></div>'+
+  '<div class="section-label">Serviço</div>'+
+  '<div><label>Modelo de serviço</label><select name="modelo" data-action-change="proposta-modelo">'+Object.keys(MODELOS_CONTRATO).map(function(mk){ return '<option value="'+mk+'"'+(propostaDraft.modelo===mk?' selected':'')+'>'+MODELOS_CONTRATO[mk].label+'</option>'; }).join('')+'</select></div>'+
+  '<div class="section-label">Valores</div>'+
+  '<div class="form-row cols-2"><div><label>Setup / entrada (R$)</label><input type="number" step="0.01" min="0" name="setup" value="'+(d.setup!=null?d.setup:'')+'"></div><div><label>Mensal (R$)</label><input type="number" step="0.01" min="0" name="mensal" value="'+(d.mensal!=null?d.mensal:'')+'"></div></div>'+
+  '<div class="form-row cols-2"><div><label>Taxa de performance (%) — opcional</label><input type="number" step="0.1" min="0" name="performancePct" value="'+(d.performancePct!=null?d.performancePct:'')+'"></div><div><label>Validade da proposta</label><input name="validade" value="'+(d.validade?esc(d.validade):'')+'" placeholder="Ex: Outubro de 2026"></div></div>'+
+  '<div class="section-label">Observação opcional</div>'+
+  '<div><label>Texto de investimento personalizado</label><textarea name="observacao" rows="4" placeholder="Deixe em branco para usar o padrão...">'+(d.observacao?esc(d.observacao):'')+'</textarea></div>'+
+  '<div><label>Status</label><select name="status">'+Object.keys(STATUS_PROPOSTA).map(function(s){ return '<option value="'+s+'"'+((d.status||'rascunho')===s?' selected':'')+'>'+STATUS_PROPOSTA[s].label+'</option>'; }).join('')+'</select></div>';
+}
+function readPropostaForm(){
+  const form = $('form[data-form="proposta"]'); if(!form) return { modelo:'social' };
+  const fd = new FormData(form);
+  return {
+    clientId: propostaDraft.clientId||'', nomeCliente: fd.get('nomeCliente')||'', segmento: fd.get('segmento')||'',
+    modelo: propostaDraft.modelo, setup: Number(fd.get('setup'))||0, mensal: Number(fd.get('mensal'))||0,
+    performancePct: fd.get('performancePct') ? Number(fd.get('performancePct')) : null,
+    validade: fd.get('validade')||'', observacao: fd.get('observacao')||'', status: fd.get('status')||'rascunho'
+  };
+}
+function buildPropostaPreviewHtml(d){
+  const modelo = MODELOS_CONTRATO[d.modelo] || MODELOS_CONTRATO.social;
+  const equipe = EQUIPE_POR_MODELO[d.modelo] || EQUIPE_POR_MODELO.social;
+  const nome = d.nomeCliente ? esc(d.nomeCliente) : '[Nome do cliente]';
+  const invest = d.observacao ? esc(d.observacao) : ('Oferecemos um projeto sob medida para impulsionar a '+nome+' no cenário digital, potencializando os resultados através de estratégias eficazes de marketing, comunicação e gestão contínua.');
+  return '<div class="prop-doc" id="proposta-print-target">'+
+    '<div class="prop-brand"><div class="mark"></div><b>POTENCIAL <span>MÍDIA</span></b></div>'+
+    '<div class="prop-hero">'+
+      '<div><h1>PROPOSTA<span class="dot">.</span></h1>'+
+      '<p>Em parceria com <b>'+nome+'</b>, nosso objetivo é fortalecer a presença digital da marca e gerar resultados consistentes através de '+modelo.label.toLowerCase()+'.</p>'+
+      '<p>'+esc(modelo.servicos)+'</p></div>'+
+      '<div class="prop-phases">'+PROPOSTA_FASES.map(function(f){ return '<div class="prop-phase"><b>'+f.titulo+'</b><p>'+f.desc+'</p></div>'; }).join('')+'</div>'+
+    '</div>'+
+    '<div class="prop-for"><span class="lbl">Proposta para</span><b>'+nome+'</b></div>'+
+    '<div class="prop-section-label">O que está incluído <span>· Escopo completo do projeto</span></div>'+
+    '<div class="prop-grid">'+
+      '<div><h4>Equipe</h4><div class="big">'+equipe.length+'× profissionais dedicados</div><ul class="prop-team-list">'+equipe.map(function(e){ return '<li>'+e+'</li>'; }).join('')+'</ul></div>'+
+      '<div><h4>Acompanhamento</h4><div class="big">Suporte direto com a equipe</div><p>Da produção ao relatório de performance, cuidamos de cada etapa com comunicação direta e transparente com você.</p></div>'+
+    '</div>'+
+    '<div class="prop-service-row"><span class="stag">Serviço principal</span><div style="flex:1"><b>'+esc(modelo.label)+'</b><p>'+esc(modelo.servicos)+'</p></div>'+(d.performancePct?'<span class="perf-pill">'+d.performancePct+'% do resultado</span>':'')+'</div>'+
+    (d.mensal>0 ? '<div class="prop-service-row"><span class="stag">Serviço recorrente</span><div style="flex:1"><b>Acompanhamento mensal</b><p>Gestão contínua, relatórios de performance e otimizações mês a mês.</p></div></div>' : '')+
+    '<div class="prop-section-label">Investimento</div>'+
+    '<div class="prop-invest">'+invest+'</div>'+
+    '<div class="prop-footer">'+
+      '<div class="valid">Proposta válida até <b>'+(d.validade?esc(d.validade):'[data]')+'</b></div>'+
+      '<div class="prop-total"><span class="lbl">Total do investimento</span><div class="nums">'+fmtMoney(d.setup||0)+'<span class="amp">&amp;</span>'+fmtMoney(d.mensal||0)+'</div></div>'+
+    '</div>'+
+  '</div>';
+}
+function refreshPropostaLive(){
+  const fieldsBox = $('#proposta-form-fields');
+  if(fieldsBox && !fieldsBox.dataset.built){
+    fieldsBox.innerHTML = propostaFormFieldsHtml(propostaDraft.seed);
+    fieldsBox.dataset.built = '1';
+  }
+  const data = readPropostaForm();
+  const preview = $('#proposta-preview-body');
+  if(preview) preview.innerHTML = buildPropostaPreviewHtml(data);
+}
+function printProposta(){
+  document.body.classList.add('printing-proposta');
+  window.print();
+}
+
 /* boot */
 (function boot(){
   document.addEventListener('click', onDocClick);
   document.addEventListener('submit', onDocSubmit);
   document.addEventListener('change', onDocChange);
   document.addEventListener('input', onDocInput);
+  window.addEventListener('afterprint', function(){ document.body.classList.remove('printing-proposta'); });
   let draggingCard = null;
   document.addEventListener('dragstart', function(e){
     const card = e.target.closest && e.target.closest('.kanban-card, .lead-card');
