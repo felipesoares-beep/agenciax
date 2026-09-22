@@ -54,9 +54,9 @@
     display:flex; flex-direction:column; padding:20px 14px; gap:22px; position:sticky; top:0; height:100vh;
   }
   .brand{ display:flex; align-items:center; gap:10px; padding:0 6px; }
-  .brand-mark{ width:34px; height:34px; border-radius:9px; background:linear-gradient(155deg,var(--accent),#c94e1e); display:flex; align-items:center; justify-content:center; font-family:'Sora'; font-weight:800; font-size:15px; color:#180a04; flex:none; }
+  .brand-mark{ width:34px; height:34px; border-radius:9px; background:linear-gradient(155deg,var(--accent),#c94e1e); display:flex; align-items:center; justify-content:center; font-family:'Sora',sans-serif; font-weight:800; font-size:15px; color:#180a04; flex:none; }
   .brand-text{ display:flex; flex-direction:column; line-height:1.15; }
-  .brand-text b{ font-family:'Sora'; font-weight:700; font-size:14.5px; letter-spacing:.01em; }
+  .brand-text b{ font-family:'Sora',sans-serif; font-weight:700; font-size:14.5px; letter-spacing:.01em; }
   .brand-text span{ font-size:10.5px; color:var(--text-faint); font-weight:600; text-transform:uppercase; letter-spacing:.06em; }
   .nav-group-label{ font-size:10.5px; text-transform:uppercase; letter-spacing:.09em; color:var(--text-faint); font-weight:700; padding:0 10px; margin-bottom:2px; }
   .nav{ display:flex; flex-direction:column; gap:2px; }
@@ -102,7 +102,7 @@
   .stat-card{ background:var(--surface); border:1px solid var(--border-soft); border-radius:var(--radius); padding:16px 18px; display:flex; flex-direction:column; gap:8px; }
   .stat-card .stat-top{ display:flex; align-items:center; gap:8px; color:var(--text-dim); font-size:12px; font-weight:700; }
   .stat-card .stat-top svg{ opacity:.75; }
-  .stat-card .stat-value{ font-family:'Sora'; font-size:26px; font-weight:700; display:flex; align-items:baseline; gap:8px; }
+  .stat-card .stat-value{ font-family:'Sora',sans-serif; font-size:26px; font-weight:700; display:flex; align-items:baseline; gap:8px; }
   .stat-card .stat-sub{ font-size:11.5px; font-weight:700; color:var(--text-faint); }
   .stat-sub.warn{ color:var(--red); }
   .stat-sub.ok{ color:var(--green); }
@@ -122,7 +122,7 @@
   .dot-neutral{background:var(--text-faint);} .dot-accent{background:var(--accent);} .dot-amber{background:var(--amber);}
   .dot-violet{background:var(--violet);} .dot-red{background:var(--red);} .dot-green{background:var(--green);} .dot-teal{background:var(--teal);}
 
-  .avatar{ width:28px; height:28px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-family:'Sora'; font-weight:700; font-size:11px; color:#0c0c0c; flex:none; }
+  .avatar{ width:28px; height:28px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-family:'Sora',sans-serif; font-weight:700; font-size:11px; color:#0c0c0c; flex:none; }
   .avatar.lg{ width:40px; height:40px; border-radius:10px; font-size:14px; }
   .avatar-stack{ display:flex; }
   .avatar-stack .avatar{ margin-left:-8px; border:2px solid var(--surface); }
@@ -185,7 +185,7 @@
   .donut-wrap{ position:relative; width:126px; height:126px; margin:6px auto 2px; }
   .donut-wrap svg{ transform:rotate(-90deg); }
   .donut-center{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; }
-  .donut-center b{ font-family:'Sora'; font-size:19px; }
+  .donut-center b{ font-family:'Sora',sans-serif; font-size:19px; }
   .donut-center span{ font-size:10px; color:var(--text-faint); font-weight:700; text-transform:uppercase; letter-spacing:.04em; }
   .warn-banner{ background:var(--amber-soft); color:var(--amber); padding:10px 14px; border-radius:10px; font-size:12.5px; font-weight:700; display:flex; align-items:center; gap:8px; margin-bottom:18px; }
   .cat-details{ border-bottom:1px solid var(--border-soft); padding:10px 0; }
@@ -218,31 +218,31 @@
   .prop-doc{ background:#0c0f13; color:#e7ebee; font-family:'Manrope',sans-serif; padding:44px 40px 36px; }
   .prop-doc .prop-brand{ display:flex; align-items:center; gap:9px; margin-bottom:26px; }
   .prop-doc .prop-brand .mark{ width:28px; height:28px; border-radius:7px; background:linear-gradient(155deg,var(--accent),#c94e1e); flex:none; }
-  .prop-doc .prop-brand b{ font-family:'Sora'; font-weight:800; font-size:13px; letter-spacing:.02em; }
+  .prop-doc .prop-brand b{ font-family:'Sora',sans-serif; font-weight:800; font-size:13px; letter-spacing:.02em; }
   .prop-doc .prop-brand span{ color:var(--accent); font-weight:800; }
   .prop-hero{ display:grid; grid-template-columns:1.3fr 1fr; gap:36px; padding-bottom:28px; border-bottom:1px solid #1c2128; }
-  .prop-hero h1{ font-family:'Sora'; font-size:44px; font-weight:800; letter-spacing:-.01em; margin:0 0 14px; text-transform:uppercase; }
+  .prop-hero h1{ font-family:'Sora',sans-serif; font-size:44px; font-weight:800; letter-spacing:-.01em; margin:0 0 14px; text-transform:uppercase; }
   .prop-hero h1 .dot{ color:var(--accent); }
   .prop-hero p{ font-size:13px; line-height:1.7; color:#aab3bb; margin:0 0 12px; }
   .prop-hero p b{ color:#fff; }
   .prop-phases{ display:flex; flex-direction:column; gap:16px; }
-  .prop-phase b{ display:block; font-family:'Sora'; font-size:14px; font-weight:700; margin-bottom:5px; }
+  .prop-phase b{ display:block; font-family:'Sora',sans-serif; font-size:14px; font-weight:700; margin-bottom:5px; }
   .prop-phase p{ font-size:11.5px; line-height:1.6; color:#9aa3ab; margin:0; }
   .prop-for{ display:flex; align-items:baseline; gap:12px; padding:22px 0; border-bottom:1px solid #1c2128; }
   .prop-for span.lbl{ font-size:10.5px; color:var(--accent); font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
-  .prop-for b{ font-family:'Sora'; font-size:26px; font-weight:800; }
+  .prop-for b{ font-family:'Sora',sans-serif; font-size:26px; font-weight:800; }
   .prop-section-label{ font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); padding:18px 0 14px; }
   .prop-section-label span{ color:#6b747c; font-weight:700; margin-left:8px; }
   .prop-grid{ display:grid; grid-template-columns:1fr 1fr; gap:30px; padding-bottom:22px; border-bottom:1px solid #1c2128; }
-  .prop-grid h4{ font-family:'Sora'; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#7c858c; margin-bottom:10px; }
-  .prop-grid .big{ font-family:'Sora'; font-size:15px; font-weight:800; margin-bottom:8px; }
+  .prop-grid h4{ font-family:'Sora',sans-serif; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:#7c858c; margin-bottom:10px; }
+  .prop-grid .big{ font-family:'Sora',sans-serif; font-size:15px; font-weight:800; margin-bottom:8px; }
   .prop-team-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px; }
   .prop-team-list li{ font-size:12.5px; color:#c9d0d5; padding-left:14px; position:relative; }
-  .prop-team-list li::before{ content:''; width:5px; height:5px; border-radius:99px; background:var(--accent); position:absolute; left:0; top:7px; }
+  .prop-team-list li .bullet{ width:5px; height:5px; border-radius:99px; background:var(--accent); position:absolute; left:0; top:7px; display:block; }
   .prop-grid p{ font-size:12px; line-height:1.65; color:#9aa3ab; margin:0; }
   .prop-service-row{ display:flex; align-items:flex-start; gap:18px; padding:18px 0; border-bottom:1px solid #1c2128; }
   .prop-service-row .stag{ font-size:9.5px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--accent); flex:0 0 130px; padding-top:2px; }
-  .prop-service-row b{ display:block; font-family:'Sora'; font-size:14px; font-weight:800; margin-bottom:5px; text-transform:uppercase; }
+  .prop-service-row b{ display:block; font-family:'Sora',sans-serif; font-size:14px; font-weight:800; margin-bottom:5px; text-transform:uppercase; }
   .prop-service-row p{ font-size:12px; line-height:1.6; color:#9aa3ab; margin:0; flex:1; }
   .prop-service-row .perf-pill{ flex:none; background:var(--accent); color:#1c0c04; font-weight:800; font-size:10.5px; padding:5px 11px; border-radius:99px; white-space:nowrap; }
   .prop-invest{ padding:18px 0; font-size:12px; line-height:1.7; color:#9aa3ab; border-bottom:1px solid #1c2128; }
@@ -254,14 +254,23 @@
   .prop-total .nums{ display:flex; align-items:baseline; gap:8px; justify-content:flex-end; }
   .prop-total .nums .amp{ color:var(--accent); font-size:20px; }
   .prop-total .tot-col{ display:flex; flex-direction:column; align-items:flex-end; }
-  .prop-total .tot-col b{ font-family:'Sora'; font-size:26px; font-weight:800; }
+  .prop-total .tot-col b{ font-family:'Sora',sans-serif; font-size:26px; font-weight:800; }
   .prop-total .tot-col small{ font-size:9px; color:#7c858c; font-weight:800; text-transform:uppercase; letter-spacing:.06em; margin-top:2px; }
   .prop-contact{ margin-top:22px; padding-top:16px; border-top:1px solid #1c2128; text-align:center; font-size:10.5px; line-height:1.7; color:#7c858c; font-weight:600; }
   @media print{
-    body.printing-proposta *{ visibility:hidden; }
-    body.printing-proposta #proposta-print-target, body.printing-proposta #proposta-print-target *{ visibility:visible; }
-    body.printing-proposta #proposta-print-target{ position:absolute; inset:0; width:100%; max-height:none; overflow:visible; margin:0; padding:0; border:none; }
-    body.printing-proposta .modal-overlay, body.printing-proposta .modal{ position:static !important; background:none !important; box-shadow:none !important; max-width:none !important; max-height:none !important; padding:0 !important; }
+    *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; color-adjust:exact !important; }
+    html, body{ background:#0c0f13 !important; margin:0 !important; }
+    body.printing-proposta .app-shell, body.printing-proposta .toast-root{ display:none !important; }
+    body.printing-proposta #modal-root{ position:static !important; }
+    body.printing-proposta .modal-overlay{ position:static !important; background:none !important; padding:0 !important; display:block !important; }
+    body.printing-proposta .modal{ position:static !important; background:none !important; box-shadow:none !important; max-width:none !important; max-height:none !important; width:auto !important; padding:0 !important; display:block !important; }
+    body.printing-proposta form[data-form="proposta"]{ display:block !important; }
+    body.printing-proposta .proposta-modal-body{ display:block !important; }
+    body.printing-proposta .proposta-form-col, body.printing-proposta .modal-head, body.printing-proposta .modal-foot{ display:none !important; }
+    body.printing-proposta .proposta-preview-col{ display:block !important; position:static !important; max-height:none !important; overflow:visible !important; background:none !important; border:none !important; width:auto !important; }
+    body.printing-proposta #proposta-preview-body{ display:block !important; }
+    body.printing-proposta #proposta-print-target{ width:auto !important; }
+    @page{ size:A4; margin:0; }
   }
 
   /* ---------- login ---------- */
@@ -279,24 +288,24 @@
   .maquina-tab-btn.active{ border-color:var(--accent); color:var(--accent); background:var(--accent-soft); }
   .mvr-card{ padding:22px 26px; }
   .mvr-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
-  .mvr-head .mvr-icon{ width:34px; height:34px; border-radius:9px; background:var(--accent-soft); color:var(--accent); display:flex; align-items:center; justify-content:center; font-family:'Sora'; font-weight:800; font-size:13px; flex:none; }
+  .mvr-head .mvr-icon{ width:34px; height:34px; border-radius:9px; background:var(--accent-soft); color:var(--accent); display:flex; align-items:center; justify-content:center; font-family:'Sora',sans-serif; font-weight:800; font-size:13px; flex:none; }
   .mvr-head h2{ font-size:17px; }
   .mvr-head p{ margin:1px 0 0; font-size:10.5px; color:var(--text-faint); font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
   .mvr-numbers{ display:flex; align-items:center; justify-content:space-around; padding:22px 10px; border-top:1px solid var(--border-soft); border-bottom:1px solid var(--border-soft); margin:14px 0; }
   .mvr-numbers .mvr-col{ text-align:center; }
   .mvr-numbers .mvr-col span.lbl{ font-size:10.5px; color:var(--text-faint); font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
-  .mvr-numbers .mvr-col b{ display:block; font-family:'Sora'; font-size:34px; font-weight:800; margin:4px 0 6px; }
+  .mvr-numbers .mvr-col b{ display:block; font-family:'Sora',sans-serif; font-size:34px; font-weight:800; margin:4px 0 6px; }
   .mvr-numbers .mvr-sep{ color:var(--text-faint); font-weight:800; }
   .gauge-row{ display:flex; justify-content:space-around; padding:6px 0 20px; flex-wrap:wrap; gap:16px; }
   .gauge-item{ text-align:center; }
   .gauge-item .g-label{ margin-top:6px; font-size:10.5px; color:var(--text-faint); font-weight:700; text-transform:uppercase; letter-spacing:.04em; }
   .metric-row{ display:grid; grid-template-columns:1fr 2.4fr 90px; align-items:center; gap:18px; padding:16px 0; border-bottom:1px solid var(--border-soft); }
   .metric-row:last-child{ border-bottom:none; }
-  .metric-row .m-meta{ font-family:'Sora'; font-weight:800; font-size:18px; }
+  .metric-row .m-meta{ font-family:'Sora',sans-serif; font-weight:800; font-size:18px; }
   .metric-row .m-mid{ text-align:center; }
   .metric-row .m-mid .m-label{ font-size:11.5px; font-weight:800; letter-spacing:.03em; text-transform:uppercase; }
   .metric-row .m-mid .m-desc{ font-size:10.5px; color:var(--text-faint); font-weight:600; margin:1px 0 8px; }
-  .metric-row .m-real{ font-family:'Sora'; font-weight:800; font-size:18px; text-align:right; }
+  .metric-row .m-real{ font-family:'Sora',sans-serif; font-weight:800; font-size:18px; text-align:right; }
   .crm-toolbar{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:16px; }
   .crm-toolbar select, .crm-toolbar input{ min-width:150px; }
   .lead-card{ background:var(--surface-2); border:1px solid var(--border-soft); border-radius:10px; padding:11px; margin-bottom:9px; cursor:grab; }
@@ -304,7 +313,7 @@
   .lead-card b{ display:block; font-size:12.5px; margin-bottom:5px; }
   .lead-card .lc-meta{ font-size:10.5px; color:var(--text-faint); font-weight:700; display:flex; align-items:center; justify-content:space-between; }
   .stat-tile{ background:var(--surface-2); border:1px solid var(--border-soft); border-radius:10px; padding:10px 12px; text-align:center; }
-  .stat-tile b{ display:block; font-family:'Sora'; font-size:18px; }
+  .stat-tile b{ display:block; font-family:'Sora',sans-serif; font-size:18px; }
   .stat-tile span{ font-size:10px; color:var(--text-faint); font-weight:700; text-transform:uppercase; }
 
   /* ---------- dashboard extras ---------- */
@@ -1944,6 +1953,7 @@ function onDocClick(e){
     }
   }
   else if(action==='proposta-export-pdf'){ printProposta(); }
+  else if(action==='proposta-export-png'){ exportPropostaPng(); }
 }
 
 function onDocChange(e){
@@ -2424,6 +2434,7 @@ function propostaModalShell(p){
       '</div>'+
       '<div class="modal-foot">'+
         (isEdit?'<button type="button" class="btn btn-danger" data-action="delete-proposta" data-id="'+p.id+'" style="margin-right:auto">'+svgIcon('trash')+' Excluir</button>':'')+
+        '<button type="button" class="btn btn-ghost" data-action="proposta-export-png">'+svgIcon('download')+' Exportar PNG</button>'+
         '<button type="button" class="btn btn-ghost" data-action="proposta-export-pdf">'+svgIcon('download')+' Exportar PDF</button>'+
         '<button type="submit" class="btn btn-primary">'+svgIcon('check')+' Salvar proposta</button>'+
       '</div>'+
@@ -2472,7 +2483,7 @@ function buildPropostaPreviewHtml(d){
     '<div class="prop-for"><span class="lbl">Proposta para</span><b>'+nome+'</b></div>'+
     '<div class="prop-section-label">O que está incluído <span>· Escopo completo do projeto</span></div>'+
     '<div class="prop-grid">'+
-      '<div><h4>Equipe</h4><div class="big">'+equipe.length+'× profissionais dedicados</div><ul class="prop-team-list">'+equipe.map(function(e){ return '<li>'+e+'</li>'; }).join('')+'</ul></div>'+
+      '<div><h4>Equipe</h4><div class="big">'+equipe.length+'× profissionais dedicados</div><ul class="prop-team-list">'+equipe.map(function(e){ return '<li><span class="bullet"></span>'+e+'</li>'; }).join('')+'</ul></div>'+
       '<div><h4>Identidade Visual</h4><div class="big">Branding Completo</div><p>'+PROPOSTA_IDENTIDADE_VISUAL+'</p></div>'+
     '</div>'+
     '<div class="prop-service-row"><span class="stag">Serviço</span><div style="flex:1"><b>'+esc(modelo.label)+'</b><p>'+esc(modelo.servicos)+'</p></div>'+(d.performancePct?'<span class="perf-pill">'+d.performancePct+'% do líquido</span>':'')+'</div>'+
@@ -2504,6 +2515,120 @@ function refreshPropostaLive(){
 function printProposta(){
   document.body.classList.add('printing-proposta');
   window.print();
+}
+function slugifyName(s){
+  return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'') || 'proposta';
+}
+function xmlSafeHtml(str){
+  str = str.replace(/&([a-zA-Z][a-zA-Z0-9]*);/g, function(match, name){
+    if(['amp','lt','gt','quot','apos'].indexOf(name) > -1) return match;
+    const el = document.createElement('textarea');
+    el.innerHTML = match;
+    const decoded = el.value;
+    return decoded.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  });
+  str = str.replace(/<(br|hr|img|input|wbr|meta|link|area|base|col|embed|source|track|param)((?:\s+[^<>]*)?)\s*>/gi, function(m, tag, attrs){
+    attrs = attrs || '';
+    return /\/\s*$/.test(attrs) ? '<'+tag+attrs+'>' : '<'+tag+attrs+' />';
+  });
+  return str;
+}
+function cloneWithComputedStyles(sourceEl){
+  const clone = sourceEl.cloneNode(false);
+  const cs = window.getComputedStyle(sourceEl);
+  let cssText = cs.cssText;
+  if(!cssText){
+    cssText = '';
+    for(let i=0;i<cs.length;i++){ const prop = cs[i]; cssText += prop+':'+cs.getPropertyValue(prop)+';'; }
+  }
+  clone.style.cssText = cssText;
+  Array.prototype.forEach.call(sourceEl.childNodes, function(child){
+    if(child.nodeType===1){ clone.appendChild(cloneWithComputedStyles(child)); }
+    else if(child.nodeType===3){ clone.appendChild(document.createTextNode(child.textContent)); }
+  });
+  return clone;
+}
+function nodeToPngDataUrl(sourceNode, opts){
+  opts = opts || {};
+  const scale = opts.scale || 2;
+  const includeFonts = opts.includeFonts !== false;
+  return new Promise(function(resolve, reject){
+    let clone;
+    try{ clone = cloneWithComputedStyles(sourceNode); }
+    catch(e){ reject(e); return; }
+    const width = Math.ceil(sourceNode.getBoundingClientRect().width) || sourceNode.offsetWidth || 820;
+    const sandbox = document.createElement('div');
+    sandbox.style.cssText = 'position:fixed; left:-99999px; top:0; width:'+width+'px; pointer-events:none;';
+    sandbox.appendChild(clone);
+    document.body.appendChild(sandbox);
+    const height = Math.ceil(clone.getBoundingClientRect().height) || clone.scrollHeight || 600;
+    const outerHtml = xmlSafeHtml(clone.outerHTML);
+    document.body.removeChild(sandbox);
+    const fontsCss = includeFonts ? "@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');" : '';
+    const svgMarkup = '<svg xmlns="http://www.w3.org/2000/svg" width="'+width+'" height="'+height+'">'+
+      '<foreignObject width="100%" height="100%">'+
+        '<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+width+'px;">'+
+          '<style><![CDATA['+fontsCss+']]></style>'+
+          outerHtml+
+        '</div>'+
+      '</foreignObject>'+
+    '</svg>';
+    const url = 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svgMarkup);
+    const img = new Image();
+    img.onload = function(){
+      setTimeout(function(){
+        try{
+          const canvas = document.createElement('canvas');
+          canvas.width = Math.max(1, Math.round(width*scale));
+          canvas.height = Math.max(1, Math.round(height*scale));
+          const ctx = canvas.getContext('2d');
+          ctx.scale(scale, scale);
+          ctx.drawImage(img, 0, 0, width, height);
+          resolve(canvas.toDataURL('image/png'));
+        }catch(err){ reject(err); }
+      }, includeFonts ? 350 : 0);
+    };
+    img.onerror = function(){ reject(new Error('svg-load-failed')); };
+    img.src = url;
+  });
+}
+async function savePngFile(filename, dataUrl){
+  if(window.claude){
+    try{
+      const downloads = await window.claude.use('downloads');
+      if(downloads){
+        const res = await fetch(dataUrl);
+        const blob = await res.blob();
+        await downloads.save({ filename: filename, data: blob });
+        return;
+      }
+    }catch(err){
+      if(err && err.code==='declined') return;
+    }
+  }
+  const a = document.createElement('a');
+  a.href = dataUrl;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+async function exportPropostaPng(){
+  const node = document.getElementById('proposta-print-target');
+  if(!node){ toast('Abra uma proposta para exportar.'); return; }
+  toast('Gerando imagem...');
+  try{
+    let dataUrl;
+    try{ dataUrl = await nodeToPngDataUrl(node, { scale:2, includeFonts:true }); }
+    catch(err){ dataUrl = await nodeToPngDataUrl(node, { scale:2, includeFonts:false }); }
+    const data = readPropostaForm();
+    const filename = 'proposta-'+slugifyName(data.nomeCliente)+'.png';
+    await savePngFile(filename, dataUrl);
+    toast('Imagem exportada.');
+  }catch(err){
+    console.error(err);
+    toast('Não foi possível gerar a imagem agora.');
+  }
 }
 
 /* boot */
